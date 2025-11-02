@@ -1399,7 +1399,7 @@
   document.getElementById("context").innerHTML = h.context;
   document.getElementById("reason").innerHTML = h.reason;
 
-  const version = 'with_AI_20';
+  const version = 'with_AI_21';
 
   // Track worker progress and enforce a limit of 3 HITs per worker
   if (workerId !== 'preview') {
@@ -1442,12 +1442,12 @@
     });
   }
 
-  document.addEventListener("DOMContentLoaded", () => {
-    const el = document.createElement("div");
-    el.style = "background:#ffeeba;padding:6px;font-size:14px;color:#000;";
-    el.innerText = `DEBUG: headlineId = ${raw_headlineId}`;
-    document.body.prepend(el);
-  });
+  // document.addEventListener("DOMContentLoaded", () => {
+  //   const el = document.createElement("div");
+  //   el.style = "background:#ffeeba;padding:6px;font-size:14px;color:#000;";
+  //   el.innerText = `DEBUG: headlineId = ${raw_headlineId}`;
+  //   document.body.prepend(el);
+  // });
   </script>
 </body>
 </html>
