@@ -1399,15 +1399,15 @@
   document.getElementById("context").innerHTML = h.context;
   document.getElementById("reason").innerHTML = h.reason;
 
-  const version = 'with_AI_21';
+  const version = 'with_AI_22';
 
-  // Track worker progress and enforce a limit of 3 HITs per worker
+  // Track worker progress and enforce a limit of 10 HITs per worker
   if (workerId !== 'preview') {
     const progressKey = `worker_progress_${workerId}_${version}`;
     let completedHITs = JSON.parse(localStorage.getItem(progressKey) || '[]');
 
-    // If the worker has already completed 3 or more HITs, block further work
-    if (completedHITs.length >= 3) {
+    // If the worker has already completed 10 or more HITs, block further work
+    if (completedHITs.length >= limit) {
       const blockDiv = document.createElement('div');
       blockDiv.style.cssText = 'background: #fff3cd; color: #664d03; padding: 16px; margin: 16px 0; border-radius: 8px; border: 1px solid #ffecb5; text-align: center; font-size: 16px;';
       blockDiv.innerHTML = `✅ You have already completed ${limit} HITs for this task. Please return/exit this HIT. Thank you!`;
@@ -1417,7 +1417,7 @@
       const formEl = document.querySelector('crowd-form');
       if (formEl) formEl.style.display = 'none';
     } else {
-      // Show progress (out of 3)
+      // Show progress (out of 10)
       const progressDiv = document.createElement('div');
       progressDiv.style.cssText = 'background: #e8f5e8; padding: 15px; margin: 15px 0; border-radius: 8px; text-align: center; font-weight: bold; font-size: 16px;';
       progressDiv.innerHTML = `📊 Your Progress: ${completedHITs.length}/${limit} HITs completed`;
