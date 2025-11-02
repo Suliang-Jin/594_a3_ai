@@ -1381,8 +1381,8 @@
     "reason": "The edited headline replaces \"lawyer\" with \"playmate,\" which creates a humorous image by using a term more often associated with children's friends or certain adult magazines, rather than legal professionals. This unexpected substitution plays on the idea of a professional, serious relationship being replaced with something juvenile or frivolous, which can be amusing due to the absurdity and incongruity."
   }
 ];
-  const headlines = all_headlines.slice(0, 5)
-  const limit = 3
+  const headlines = all_headlines.slice(0, 5);
+  const limit = 3;
   document.getElementById("limit-placeholder").innerText = limit;
 
   // Get headline ID from URL and load headlines
@@ -1399,7 +1399,7 @@
   document.getElementById("context").innerHTML = h.context;
   document.getElementById("reason").innerHTML = h.reason;
 
-  const version = 'with_AI_17';
+  const version = 'with_AI_18';
 
   // Track worker progress and enforce a limit of 3 HITs per worker
   if (workerId !== 'preview') {
